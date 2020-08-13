@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<org.jpac.JPac>
+		<CycleTime comment="[ns]">10000000</CycleTime>
+		<CycleTimeoutTime comment="[ns]">1000000000</CycleTimeoutTime>
+		<CycleMode comment="[OneCycle | Bound | LazyBound | FreeRunning]">LazyBound</CycleMode>
+		<RunningInsideAnIde comment="will pop up a small window to close the application">false</RunningInsideAnIde>
+		<RunningStandalone comment="must be true,if Elbfisch is run standalone">true</RunningStandalone>
+		<EnableTrace comment="enables tracing of the module activity">false</EnableTrace>
+		<TraceTimeMinutes comment="used to estimate the length of the trace buffer [min]">0</TraceTimeMinutes>
+		<pauseOnBreakPoint comment="cycle is paused,until all modules enter waiting state">false</pauseOnBreakPoint>
+		<RemoteSignalsEnabled comment="enable connections to/from remote JPac instances">false</RemoteSignalsEnabled>
+		<RemoteSignalPort comment="server port for remote signal access">10002</RemoteSignalPort>
+		<HistogramFile comment="file in which the histograms are stored">./data/histogram.csv</HistogramFile>
+		<CyclicTaskShutdownTimeoutTime comment="Timeout for all cyclic tasks to stop on shutdown [ns]">5000000000</CyclicTaskShutdownTimeoutTime>
+		<OpcUa>
+			<ServiceEnabled comment="enables the opc ua service">false</ServiceEnabled>
+			<ServicePort comment="port over which the opc ua service is provided">12685</ServicePort>
+			<ServiceName comment="name of the server instance">elbfisch</ServiceName>
+			<MinSupportedSampleRate comment="minimum supported sample rate">100.0</MinSupportedSampleRate>
+			<DefaultAccessLevel comment="access levels can be NONE,READ_ONLY,READ_WRITE">NONE</DefaultAccessLevel>
+			<BindAddresses>
+				<BindAddress comment="bind address">0.0.0.0</BindAddress>
+			</BindAddresses>
+			<MinSupportedSampleInterval comment="minimum supported sample interval [ms]">10.0</MinSupportedSampleInterval>
+		</OpcUa>
+		<Console>
+			<ServiceEnabled comment="enables the console service">false</ServiceEnabled>
+			<ServicePort comment="port over which the console service is provided">8024</ServicePort>
+			<BindAddress comment="address the console service is bound to">localhost</BindAddress>
+		</Console>
+		<GenerateSnapShotOnShutdown comment="used to enable the generation of a snapshot on shutdown">false</GenerateSnapShotOnShutdown>
+		<MaxShutdownTime comment="period of time in which all modules must have been terminated in case of a shutdown [ns]">5000000000</MaxShutdownTime>
+		<Ef>
+			<ServiceEnabled comment="enables the elbfisch service">false</ServiceEnabled>
+			<BindAddress comment="address this service is bound to">localhost</BindAddress>
+			<ServicePort comment="port over which the elbfisch service is provided">13685</ServicePort>
+			<DefaultAccessLevel comment="access levels can be NONE,READ_ONLY,READ_WRITE">NONE</DefaultAccessLevel>
+			<ReceiveBufferSize comment="size of the receive buffer [byte]">32000</ReceiveBufferSize>
+		</Ef>
+	</org.jpac.JPac>
+	<org.jpac.vioss>
+		<IOHandler>
+			<ads>      
+				<class>org.jpac.vioss.ads.IOHandler</class>
+            	<parameter comment="handler specific parameters">
+            	</parameter>
+			</ads>
+			<opc.tcp>
+				<class>org.jpac.vioss.opcua.IOHandler</class>
+            	<parameter comment="handler specific parameters">
+            	</parameter>
+			</opc.tcp>
+            <modbus>
+	            <class>org.jpac.vioss.modbus.IOHandler</class>
+            	<parameter comment="handler specific parameters">
+	            	<wago750>
+	            		<!-- device specific mapping of iec 61131 addresses to devices datablocks (see device specification)     -->
+	            		<!-- applied function codes must be block read/write codes because process image is exchanged as a whole -->
+	            		<datablock address="000" size="3" iec61131Address="IW0" ReadFuncionCode="04" WriteFuncionCode="NA"/>
+	            		<datablock address="512" size="2" iec61131Address="QW0" ReadFuncionCode="NA" WriteFuncionCode="15"/>
+	            		<datablock address="768" size="256" iec61131Address="MW0" ReadFuncionCode="03" WriteFuncionCode="16" />
+       		    	</wago750>
+            	</parameter>
+            </modbus>        			        
+		</IOHandler>
+	</org.jpac.vioss>
+	<Main elbfischInstance="./"/>
+</configuration>
