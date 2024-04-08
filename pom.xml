@@ -8,36 +8,105 @@
 	<name>elbfisch.samples.opcua.client</name>
 
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.elbfisch</groupId>
+			<groupId>elbfisch</groupId>
 			<artifactId>elbfisch.core</artifactId>
-			<version>3.1.0</version>
+			<version>4.1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.elbfisch</groupId>
+			<groupId>elbfisch</groupId>
 			<artifactId>elbfisch.fx</artifactId>
-			<version>3.1.1</version>
+			<version>4.1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.elbfisch</groupId>
+			<groupId>elbfisch</groupId>
 			<artifactId>elbfisch.vioss</artifactId>
-			<version>3.1.0</version>
+			<version>4.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>2.17.1</version>
+			<version>2.22.1</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.17.1</version>
+			<version>2.22.1</version>
 		</dependency>
+		<dependency>
+			<groupId>naturalcli</groupId>
+			<artifactId>naturalcli</artifactId>
+			<version>1.2.3</version>
+			<scope>system</scope>
+			<systemPath>/Users/berndschuster/projects/javalibs/naturalcli-1.2.3.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>javafx-swt</groupId>
+			<artifactId>javafx-swt</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx-swt.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>javafx.graphics</groupId>
+			<artifactId>javafx.graphics</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.graphics.jar</systemPath>
+		</dependency>		
+		<dependency>
+			<groupId>javafx.web</groupId>
+			<artifactId>javafx.web</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.web.jar</systemPath>
+		</dependency>		
+		<dependency>
+			<groupId>javafx.base</groupId>
+			<artifactId>javafx.base</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.base.jar</systemPath>
+		</dependency>		
+		<dependency>
+			<groupId>javafx.media</groupId>
+			<artifactId>javafx.media</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.media.jar</systemPath>
+		</dependency>		
+		<dependency>
+			<groupId>javafx.controls</groupId>
+			<artifactId>javafx.controls</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.controls.jar</systemPath>
+		</dependency>		
+		<dependency>
+			<groupId>javafx.fxml</groupId>
+			<artifactId>javafx.fxml</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.fxml.jar</systemPath>
+		</dependency>		
+		<dependency>
+			<groupId>javafx.swing</groupId>
+			<artifactId>javafx.swing</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.swing.jar</systemPath>
+		</dependency>		
 	</dependencies>
 </project>

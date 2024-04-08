@@ -9,8 +9,6 @@
 		<EnableTrace comment="enables tracing of the module activity">false</EnableTrace>
 		<TraceTimeMinutes comment="used to estimate the length of the trace buffer [min]">0</TraceTimeMinutes>
 		<pauseOnBreakPoint comment="cycle is paused,until all modules enter waiting state">false</pauseOnBreakPoint>
-		<RemoteSignalsEnabled comment="enable connections to/from remote JPac instances">false</RemoteSignalsEnabled>
-		<RemoteSignalPort comment="server port for remote signal access">10002</RemoteSignalPort>
 		<HistogramFile comment="file in which the histograms are stored">./data/histogram.csv</HistogramFile>
 		<CyclicTaskShutdownTimeoutTime comment="Timeout for all cyclic tasks to stop on shutdown [ns]">5000000000</CyclicTaskShutdownTimeoutTime>
 		<OpcUa>
@@ -18,9 +16,9 @@
 			<ServicePort comment="port over which the opc ua service is provided">12685</ServicePort>
 			<ServiceName comment="name of the server instance">elbfisch</ServiceName>
 			<MinSupportedSampleRate comment="minimum supported sample rate">100.0</MinSupportedSampleRate>
-			<DefaultAccessLevel comment="access levels can be NONE,READ_ONLY,READ_WRITE">NONE</DefaultAccessLevel>
+			<DefaultAccessLevel comment="access levels can be NONE,READ_ONLY,READ_WRITE">READ_WRITE</DefaultAccessLevel>
 			<BindAddresses>
-				<BindAddress comment="bind address">0.0.0.0</BindAddress>
+				<BindAddress comment="bind address">192.168.0.52</BindAddress>
 			</BindAddresses>
 			<MinSupportedSampleInterval comment="minimum supported sample interval [ms]">10.0</MinSupportedSampleInterval>
 		</OpcUa>

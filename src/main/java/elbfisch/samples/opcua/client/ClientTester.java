@@ -25,7 +25,7 @@
 
 package elbfisch.samples.opcua.client;
 
-import static javafx.application.Application.launch;
+//import static javafx.application.Application.launch;
 import javafx.stage.Stage;
 import org.jpac.Module;
 import org.jpac.fx.DashboardLauncher;
@@ -40,6 +40,7 @@ public class ClientTester extends ModuleTesterTemplate{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println(">>>> ClientTester.main()");
         Module module = new ClientMain();
         module.start();
         launch(args);

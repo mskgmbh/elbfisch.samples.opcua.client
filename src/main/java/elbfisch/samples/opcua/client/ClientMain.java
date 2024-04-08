@@ -55,11 +55,11 @@ public class ClientMain extends Module{
     public ClientMain(){
         super(null, "Main");
         try{
-            toggle      = new IoLogical(this, "toggle", new URI("opc.tcp://localhost:12685/elbfisch/2/Main.toggle"), IoDirection.INPUT);
-            lastCommand = new IoSignedInteger(this, "lastCommand", new URI("opc.tcp://localhost:12685/elbfisch/2/Main.lastCommand"), IoDirection.INPUT);
-            handshake   = new Handshake(this, "handshake", new URI("opc.tcp://localhost:12685/elbfisch/2/Main.handshake"));
-            comment     = new IoCharString(this, "comment", new URI("opc.tcp://localhost:12685/elbfisch/2/Main.comment"), IoDirection.INPUT);
-            analogValue = new IoDecimal(this, "analogValue", new URI("opc.tcp://localhost:12685/elbfisch/2/Main.analogValue"), IoDirection.INPUT);
+            toggle      = new IoLogical(this, "toggle", new URI("opc.tcp://192.168.0.52:12686/elbfisch/2/Main.toggle"), IoDirection.INPUT);
+            lastCommand = new IoSignedInteger(this, "lastCommand", new URI("opc.tcp://192.168.0.52:12686/elbfisch/2/Main.lastCommand"), IoDirection.INPUT);
+            handshake   = new Handshake(this, "handshake", new URI("opc.tcp://192.168.0.52:12686/elbfisch/2/Main.handshake"));
+            comment     = new IoCharString(this, "comment", new URI("opc.tcp://192.168.0.52:12686/elbfisch/2/Main.comment"), IoDirection.INPUT);
+            analogValue = new IoDecimal(this, "analogValue", new URI("opc.tcp://192.168.0.52:12686/elbfisch/2/Main.analogValue"), IoDirection.INPUT);
         }
         catch(Exception exc){
             Log.error("Error:", exc);
@@ -69,9 +69,9 @@ public class ClientMain extends Module{
     @Override
     protected void work() throws ProcessException {
         int command = 100;
-        PeriodOfTime delay = new PeriodOfTime(2 * sec);
+        PeriodOfTime delay = new PeriodOfTime(1 * sec);
         try{
-            Log.info("started");
+            Log.info("started: JVM: " + System.getProperty("java.version"));
             while(true){
                 try{
                     if (!handshake.isValid() && !handshake.isReady()){
@@ -84,6 +84,7 @@ public class ClientMain extends Module{
                     if (!handshake.isReady()) {
                     	handshake.ready().await();
                     }
+                    delay.await();
                     handshake.request(command);
                     Log.info("request {} send to server", command);
                     handshake.active().await();
