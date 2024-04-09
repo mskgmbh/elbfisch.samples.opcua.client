@@ -57,7 +57,7 @@
 			<artifactId>javafx.graphics</artifactId>
 			<version>1</version>
 			<scope>system</scope>
-			<systemPath>/${basedir}/YourPathToJavaFxLibs/javafx.graphics.jar</systemPath>
+			<systemPath>${basedir}/YourPathToJavaFxLibs/javafx.graphics.jar</systemPath>
 		</dependency>		
 		<dependency>
 			<groupId>javafx.web</groupId>
@@ -85,7 +85,7 @@
 			<artifactId>javafx.controls</artifactId>
 			<version>1</version>
 			<scope>system</scope>
-			<systemPath>/${basedir}/YourPathToJavaFxLibs/javafx.controls.jar</systemPath>
+			<systemPath>${basedir}/YourPathToJavaFxLibs/javafx.controls.jar</systemPath>
 		</dependency>		
 		<dependency>
 			<groupId>javafx.fxml</groupId>
