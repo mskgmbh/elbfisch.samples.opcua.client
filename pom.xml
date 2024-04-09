@@ -46,67 +46,60 @@
 			<version>2.22.1</version>
 		</dependency>
 		<dependency>
-			<groupId>naturalcli</groupId>
-			<artifactId>naturalcli</artifactId>
-			<version>1.2.3</version>
-			<scope>system</scope>
-			<systemPath>/Users/berndschuster/projects/javalibs/naturalcli-1.2.3.jar</systemPath>
-		</dependency>
-		<dependency>
 			<groupId>javafx-swt</groupId>
 			<artifactId>javafx-swt</artifactId>
 			<version>1</version>
 			<scope>system</scope>
-			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx-swt.jar</systemPath>
+			<systemPath>${basedir}/YourPathToJavaFxLibs/javafx-swt.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>javafx.graphics</groupId>
 			<artifactId>javafx.graphics</artifactId>
 			<version>1</version>
 			<scope>system</scope>
-			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.graphics.jar</systemPath>
+			<systemPath>/${basedir}/YourPathToJavaFxLibs/javafx.graphics.jar</systemPath>
 		</dependency>		
 		<dependency>
 			<groupId>javafx.web</groupId>
 			<artifactId>javafx.web</artifactId>
 			<version>1</version>
 			<scope>system</scope>
-			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.web.jar</systemPath>
+			<systemPath>${basedir}/YourPathToJavaFxLibs/javafx.web.jar</systemPath>
 		</dependency>		
 		<dependency>
 			<groupId>javafx.base</groupId>
 			<artifactId>javafx.base</artifactId>
 			<version>1</version>
 			<scope>system</scope>
-			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.base.jar</systemPath>
+			<systemPath>${basedir}/YourPathToJavaFxLibs/javafx.base.jar</systemPath>
 		</dependency>		
 		<dependency>
 			<groupId>javafx.media</groupId>
 			<artifactId>javafx.media</artifactId>
 			<version>1</version>
 			<scope>system</scope>
-			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.media.jar</systemPath>
+			<systemPath>${basedir}/YourPathToJavaFxLibs/javafx.media.jar</systemPath>
 		</dependency>		
 		<dependency>
 			<groupId>javafx.controls</groupId>
 			<artifactId>javafx.controls</artifactId>
 			<version>1</version>
 			<scope>system</scope>
-			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.controls.jar</systemPath>
+			<systemPath>/${basedir}/YourPathToJavaFxLibs/javafx.controls.jar</systemPath>
 		</dependency>		
 		<dependency>
 			<groupId>javafx.fxml</groupId>
 			<artifactId>javafx.fxml</artifactId>
 			<version>1</version>
 			<scope>system</scope>
-			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.fxml.jar</systemPath>
+			<systemPath>${basedir}/YourPathToJavaFxLibs/javafx.fxml.jar</systemPath>
 		</dependency>		
 		<dependency>
 			<groupId>javafx.swing</groupId>
 			<artifactId>javafx.swing</artifactId>
 			<version>1</version>
 			<scope>system</scope>
-			<systemPath>/Users/berndschuster/javafx/javafx-sdk-21.0.1/lib/javafx.swing.jar</systemPath>
+			<systemPath>${basedir}/YourPathToJavaFxLibs/javafx.swing.jar</systemPath>
 		</dependency>		
 	</dependencies>
 </project>
