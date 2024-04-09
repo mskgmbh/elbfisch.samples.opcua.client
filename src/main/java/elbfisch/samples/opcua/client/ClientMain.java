@@ -71,7 +71,7 @@ public class ClientMain extends Module{
         int command = 100;
         PeriodOfTime delay = new PeriodOfTime(1 * sec);
         try{
-            Log.info("started: JVM: " + System.getProperty("java.version"));
+            Log.info("started: actual JVM: " + System.getProperty("java.version"));
             while(true){
                 try{
                     if (!handshake.isValid() && !handshake.isReady()){
